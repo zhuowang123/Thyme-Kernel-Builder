@@ -154,6 +154,9 @@ jobs:
           echo "Fixing fsa4480 duplicate label..."
           find arch/arm64/boot/dts/vendor/qcom -name "*.dts*" -exec sed -i '/fsa4480: fsa4480@/d' {} +
           
+          echo "Skipping broken kona-rumi dtb..."
+          sed -i 's/.*kona-rumi.dtb.*/# &/' arch/arm64/boot/dts/vendor/qcom/Makefile
+          
           make ${{ env.args }} ${{ env.DEFCONFIG_NAME }}
 
       - name: "🎶 Build kernel"
