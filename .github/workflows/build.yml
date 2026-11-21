@@ -150,6 +150,10 @@ jobs:
           if [ -f "arch/arm64/configs/thyme_stock-defconfig" ]; then
           cp arch/arm64/configs/thyme_stock-defconfig arch/arm64/configs/thyme_stock_defconfig
           fi
+          
+          echo "Fixing fsa4480 duplicate label..."
+          find arch/arm64/boot/dts/vendor/qcom -name "*.dts*" -exec sed -i '/fsa4480: fsa4480@/d' {} +
+          
           make ${{ env.args }} ${{ env.DEFCONFIG_NAME }}
 
       - name: "🎶 Build kernel"
