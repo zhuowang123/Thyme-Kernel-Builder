@@ -42,7 +42,7 @@ jobs:
       kernelBranch: ${{ matrix.repos.kernelSource.branch }}
       kernelDevice: ${{ matrix.repos.kernelSource.device }}
 
-      DEFCONFIG_NAME: ${{ matrix.repos.kernelSource.device }}
+      DEFCONFIG_NAME: ${{ matrix.repos.kernelSource.device }}_defconfig
 
       withKernelSU: ${{ matrix.repos.withKernelSU }}
     steps:
@@ -147,6 +147,9 @@ jobs:
           args: ${{ steps.generate-args.outputs.args }}
         run: |
           echo "PATH Variable: $PATH"
+          if [ -f "arch/arm64/configs/thyme_stock-defconfig" ]; then
+          cp arch/arm64/configs/thyme_stock-defconfig arch/arm64/configs/thyme_stock_defconfig
+          fi
           make ${{ env.args }} ${{ env.DEFCONFIG_NAME }}
 
       - name: "🎶 Build kernel"
