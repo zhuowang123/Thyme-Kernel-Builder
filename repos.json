@@ -29,12 +29,12 @@
       "CC": "clang"
     },    
     "kernelSource": {
-      "name": "DogDay-KernelSU",
-      "repo": "https://codeberg.org/DogDayAndroid/android_kernel_xiaomi_thyme",
-      "branch": "lineage-20.0",
+      "name": "AstideLabs-Thyme",
+      "repo": "https://github.com/AstideLabs/kernel_xiaomi_sm8250_mod",
+      "branch": "android15-lineage22-mod",
       "device": "thyme"
     },
-    "withKernelSU": true,
+    "withKernelSU": false,
     "toolchains": [
       {
         "repo": "https://android.googlesource.com/platform/prebuilts/gas/linux-x86",
