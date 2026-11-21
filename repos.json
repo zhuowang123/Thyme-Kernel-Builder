@@ -1,10 +1,10 @@
 [
   {
     "kernelSource": {
-      "name": "AstideLabs-Thyme",
-      "repo": "https://github.com/AstideLabs/kernel_xiaomi_sm8250_mod",
+      "name": "Strawing-Thyme",
+      "repo": "https://github.com/liyafe1997/kernel_xiaomi_sm8250_mod",
       "branch": "android15-lineage22-mod",
-      "device": "thyme"
+      "device": "thyme_stock"
     },
     "withKernelSU": true,
     "toolchains": [
