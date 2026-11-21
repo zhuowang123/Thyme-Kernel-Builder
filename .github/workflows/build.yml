@@ -3,6 +3,7 @@ name: "Build kernels"
 env:
   CONFIGURATION: "repos.json"
   OUT_DIR: "out"
+  HOSTCFLAGS: "-fcf-protection=none"
 
 on:
   workflow_dispatch:
