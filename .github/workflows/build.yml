@@ -4,6 +4,7 @@ env:
   CONFIGURATION: "repos.json"
   OUT_DIR: "out"
   HOSTCFLAGS: "-fcf-protection=none"
+  KCFLAGS: "-O1"
 
 on:
   workflow_dispatch:
